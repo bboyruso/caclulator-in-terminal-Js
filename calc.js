@@ -69,26 +69,20 @@ If you enter more than one number separated by commas, the result will be additi
       alert(`${total} is a square root of ${numbers[0]}`);
     } else {
       counterOperations++;
+
+      allResults.push("\nShowing results N" + counterOperations);
       const addition = numbers.reduce(add);
-      allResults.push(
-        "\nAddition" + counterOperations + " = " + addition + " "
-      );
+      allResults.push("\nAddition = " + addition + " ");
 
       const multiplication = numbers.reduce(multiply);
-      allResults.push(
-        " Multiplication" + counterOperations + " = " + multiplication + " "
-      );
+      allResults.push(" Multiplication = " + multiplication + " ");
 
       const subtraction = numbers.reduce(subtract);
-      allResults.push(
-        " Subtraction" + counterOperations + " = " + subtraction + " "
-      );
+      allResults.push(" Subtraction = " + subtraction + " ");
 
       const division = numbers.reduce(divide);
-      allResults.push(
-        " Division" + counterOperations + " = " + division.toFixed(3)
-      );
-
+      allResults.push(" Division = " + division.toFixed(3));
+      
       showResults();
     }
   };
