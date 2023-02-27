@@ -3,7 +3,6 @@ let counterOperations = 0;
 
 const sayBye = () => {
   alert(`Thanks for Visiting!`);
-  window.open("https://github.com/bboyruso");
 };
 
 const startAgain = () => {
@@ -23,7 +22,10 @@ const showResults = () => {
 };
 
 const start = () => {
-  const getData = prompt("Introduce numbers to calculate");
+  const getData = prompt(
+    `Enter a number, the result will be square root.
+If you enter more than one number separated by commas, the result will be addition, multiplication, subtraction, and division.`
+  );
 
   if (getData === null) {
     sayBye();
@@ -67,19 +69,25 @@ const start = () => {
       alert(`${total} is a square root of ${numbers[0]}`);
     } else {
       counterOperations++;
-      const sum = numbers.reduce(add);
-      allResults.push("\nSUM " + counterOperations + " = " + sum + " ");
+      const addition = numbers.reduce(add);
+      allResults.push(
+        "\nAddition" + counterOperations + " = " + addition + " "
+      );
 
-      const multi = numbers.reduce(multiply);
-      allResults.push(" MULT " + counterOperations + " = " + multi + " ");
+      const multiplication = numbers.reduce(multiply);
+      allResults.push(
+        " Multiplication" + counterOperations + " = " + multiplication + " "
+      );
 
-      const subst = numbers.reduce(subtract);
-      allResults.push(" SUBST " + counterOperations + " = " + subst + " ");
+      const subtraction = numbers.reduce(subtract);
+      allResults.push(
+        " Subtraction" + counterOperations + " = " + subtraction + " "
+      );
 
-      const div = numbers.reduce(divide);
-      allResults.push(" DIV " + counterOperations + " = " + div.toFixed(3));
-
-      ///////////////////
+      const division = numbers.reduce(divide);
+      allResults.push(
+        " Division" + counterOperations + " = " + division.toFixed(3)
+      );
 
       showResults();
     }
